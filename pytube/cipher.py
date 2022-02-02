@@ -291,11 +291,14 @@ def get_throttling_function_code(js: str) -> str:
     """
     # Begin by extracting the correct function name
     name = "iha"
-
+    print(f"js, {js}")
     # Identify where the function is defined
     pattern_start = r"%s=function\(\w\)" % name
+    print(f"patternstart, {pattern_start}")
     regex = re.compile(pattern_start)
+    print(f"regex, {regex}")
     match = regex.search(js)
+    print(f"match, {match}")
 
     # Extract the code within curly braces for the function itself, and merge any split lines
     code_lines_list = find_object_from_startpoint(js, match.span()[1]).split('\n')
