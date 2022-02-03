@@ -290,15 +290,15 @@ def get_throttling_function_code(js: str) -> str:
         The name of the function used to compute the throttling parameter.
     """
     # Begin by extracting the correct function name
-    # name = re.escape(get_throttling_function_name(js))
-    name = "jha"
+    name = re.escape(get_throttling_function_name(js))
+    #name = "jha"
     # Identify where the function is defined
     pattern_start = r"%s=function\(\w\)" % name
-    print(f"patternstart, {pattern_start}")
+    #print(f"patternstart, {pattern_start}")
     regex = re.compile(pattern_start)
-    print(f"regex, {regex}")
+    #print(f"regex, {regex}")
     match = regex.search(js)
-    print(f"match, {match}")
+    #print(f"match, {match}")
 
     # Extract the code within curly braces for the function itself, and merge any split lines
     code_lines_list = find_object_from_startpoint(js, match.span()[1]).split('\n')
