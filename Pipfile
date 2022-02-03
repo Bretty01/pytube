@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+pytube = {editable = true, git = "https://github.com/Bretty01/pytube"}
 
 [dev-packages]
 bumpversion = "*"
